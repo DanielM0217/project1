@@ -4,3 +4,125 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.door{
+    position: fixed;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -32%);
+}
+
+
+.cabinet{
+    position: fixed;
+    top: 25%;
+    left: 30%;
+}
+
+.cabinet > img {
+    width: 12em;
+}
+
+.interact:hover{
+    cursor: pointer;
+}
+
+.tv{
+    position: fixed;
+    top: 20%;
+    right: 30%;
+}
+
+.tv > img{
+    width: 15em;
+}
+@media only screen and (max-width: 1300px){
+    .cabinet{
+        position: fixed;
+        top: 25%;
+        left: 20%;
+    }
+
+    .tv{
+        position: fixed;
+        top: 20%;
+        right: 20%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .cabinet{
+        position: fixed;
+        top: 25%;
+        left: 20%;
+}
+
+    .tv{
+    position: fixed;
+    top: 20%;
+    right: 15%;
+}
+}
+
+@media only screen and (max-width: 900px){
+    .cabinet{
+        position: fixed;
+        top: 25%;
+        left: 10%;
+}    
+    .tv{
+    position: fixed;
+    top: 20%;
+    right: 10%;
+}    
+}
+
+@media only screen and (max-width: 800px){
+    .cabinet{
+        position: fixed;
+        top: 25%;
+        left: 10%;
+}
+    .tv{
+    position: fixed;
+    top: 20%;
+    right: 5%;
+}
+}
+
+@media only screen and (max-width: 700px){
+    .cabinet{
+        top: 25%;
+        left: 0%;
+    }
+    .tv{
+    position: fixed;
+    top: 20%;
+    right: 0%;
+}    
+}
+
+@media only screen and (max-width: 600px){
+    .cabinet{
+        top: 25%;
+        left: 0%;
+    }
+    .cabinet > img {
+        width: 10em;
+    }
+    .tv > img {
+        width: 12em;
+    }
+}
+
+@media only screen and (max-width: 510px){
+    .door > img{
+        width: 20em;
+    }
+
+    .door{
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+}
