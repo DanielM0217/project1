@@ -1,3 +1,6 @@
 body {
-    background-color: black;
+    background-image: url(assets/emptyroom.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
