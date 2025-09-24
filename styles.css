@@ -10,6 +10,11 @@ body {
     top: 48%;
     left: 50%;
     transform: translate(-50%, -32%);
+    z-index: -1;
+}
+
+.door > img{
+    width: 25em;
 }
 
 
@@ -36,6 +41,30 @@ body {
 .tv > img{
     width: 15em;
 }
+
+.outlet{
+    position: fixed;
+    top: 40%;
+    right: 30%;
+}
+
+.outlet > img{
+    width: 2em;
+}
+
+.safe > img{
+    width: 10em;
+    position: fixed;
+    bottom: 15%;
+    right: 30%;
+}
+
+.desk > img{
+    width: 30em;
+    position: fixed;
+    bottom: 5%;
+    left: 15%;
+}
 @media only screen and (max-width: 1300px){
     .cabinet{
         position: fixed;
@@ -47,6 +76,24 @@ body {
         position: fixed;
         top: 20%;
         right: 20%;
+    }
+    
+    .desk > img{
+        bottom: 5%;
+        left: 5%;
+    }
+
+    .safe > img{
+        bottom: 15%;
+        right: 15%;
+    }
+
+}
+
+@media only screen and (max-width: 1100px){
+    .desk > img{
+        bottom: 5%;
+        left: 0%;
     }
 }
 
@@ -62,6 +109,10 @@ body {
     top: 20%;
     right: 15%;
 }
+    .desk > img{
+        width: 27em;
+        bottom: 10%;
+    }
 }
 
 @media only screen and (max-width: 900px){
@@ -71,10 +122,14 @@ body {
         left: 10%;
 }    
     .tv{
-    position: fixed;
-    top: 20%;
-    right: 10%;
+        position: fixed;
+        top: 20%;
+        right: 10%;
 }    
+    .desk > img{
+        width: 24em;
+        bottom: 10%;
+    }
 }
 
 @media only screen and (max-width: 800px){
@@ -84,26 +139,39 @@ body {
         left: 10%;
 }
     .tv{
-    position: fixed;
-    top: 20%;
-    right: 5%;
+        position: fixed;
+        top: 20%;
+        right: 5%;
 }
+
+    .desk > img{
+        width: 22em;
+        bottom: 13%;
+    }
 }
 
 @media only screen and (max-width: 700px){
     .cabinet{
+        position: fixed;
         top: 25%;
         left: 0%;
     }
     .tv{
-    position: fixed;
-    top: 20%;
-    right: 0%;
+        position: fixed;
+        top: 20%;
+        right: 0%;
 }    
+    .outlet{
+        position: fixed;
+        top: 40%;
+        right: 25%;
+    }
 }
+
 
 @media only screen and (max-width: 600px){
     .cabinet{
+        position: fixed;
         top: 25%;
         left: 0%;
     }
@@ -113,6 +181,12 @@ body {
     .tv > img {
         width: 12em;
     }
+
+    .outlet{
+        position: fixed;
+        top: 40%;
+        right: 20%;
+    }
 }
 
 @media only screen and (max-width: 510px){
@@ -121,8 +195,16 @@ body {
     }
 
     .door{
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+        position: fixed;
+        bottom: 30%;
+        left: 50%;   
+    }
 }
+
+@media only screen and (max-width: 410px){
+    .cabinet{
+        position: fixed;
+        top: 25%;
+        left: -5%;
+    }
 }
