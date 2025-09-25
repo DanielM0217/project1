@@ -54,7 +54,6 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// Button click logic for pin pad
 buttons.forEach((btn) => {
   btn.addEventListener('click', () => {
     const val = btn.textContent;
@@ -68,7 +67,6 @@ buttons.forEach((btn) => {
         unlockSound.play();
         pincode.style.display = 'none';
 
-        // After sound ends, show open safe
         unlockSound.addEventListener(
           'ended',
           () => {
@@ -77,7 +75,7 @@ buttons.forEach((btn) => {
             if (openSafe) openSafe.style.display = 'flex';
             display.value = '';
           },
-          { once: true } // Avoid multiple triggers
+          { once: true }
         );
       } else {
         wrongSound.play();
@@ -141,9 +139,14 @@ closedcabinet.addEventListener('click', () =>{
 const door = document.querySelector('.door')
 door.addEventListener('click', () => {
     if (key === true){
-        const endscreen = document.getElementById('ending')
-        ending.style.display = 'flex';
-    }
+        const endscreen = document.getElementById('ending');
+        const doornoise = new Audio('assets/music/dooropen.mp3');
+        doornoise.volume = .7
+        doornoise.play();
+        doornoise.addEventListener('ended', () => {
+            ending.style.display = 'flex';
+    });
+}
     else{
         const lockeddoor = new Audio('assets/music/lockeddoor.mp3');
         lockeddoor.volume = 0.25;
