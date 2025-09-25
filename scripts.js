@@ -24,51 +24,71 @@ document.addEventListener('click', function () {
     }
   }, { once: true });
 
-/*showing hidden pin pad */
-  const pincode = document.getElementById('safepassword');
-  const closedsafe = document.querySelector('.close');
-  closedsafe.addEventListener('click', function() {
-    pincode.style.display = 'flex';
-}); 
-  /*Safe Password*/
-
+const pincode = document.getElementById('safepassword');
 const display = document.getElementById('numpad-display');
 const buttons = document.querySelectorAll('.numpad-btn');
 const unlockSound = new Audio('assets/music/SafeOpen.mp3');
+const wrongSound = new Audio('assets/music/wrong.mp3');
 
-buttons.forEach(btn => {
+wrongSound.volume = 0.5;
+
+// Open the pin pad when clicking the closed safe
+const closedsafe = document.querySelector('.close');
+closedsafe.addEventListener('click', function (event) {
+  event.stopPropagation(); // Prevent immediate closing
+  pincode.style.display = 'flex';
+});
+
+// Prevent clicks inside the pin pad from closing it
+pincode.addEventListener('click', function (event) {
+  event.stopPropagation();
+});
+
+// Close the pin pad when clicking outside
+document.addEventListener('click', function (event) {
+  if (
+    pincode.style.display === 'flex' &&
+    !pincode.contains(event.target)
+  ) {
+    pincode.style.display = 'none';
+  }
+});
+
+// Button click logic for pin pad
+buttons.forEach((btn) => {
   btn.addEventListener('click', () => {
     const val = btn.textContent;
 
     if (val === 'C') {
-      pincode.style.display = 'none';
+      display.value = '';
     } else if (val === '⏎') {
       const pinEntered = display.value;
 
       if (pinEntered === '519') {
         unlockSound.play();
-        if (pincode) pincode.style.display = 'none';
+        pincode.style.display = 'none';
 
-        unlockSound.addEventListener('ended', () => {
-          const pincode = document.getElementById('safepassword');
-          const openSafe = document.querySelector('.open');
-
-          if (closedsafe) closedsafe.style.display = 'none';
-          if (openSafe) openSafe.style.display = 'flex';
-
-          display.value = '';
-        }, { once: true });
-
+        // After sound ends, show open safe
+        unlockSound.addEventListener(
+          'ended',
+          () => {
+            const openSafe = document.querySelector('.open');
+            if (closedsafe) closedsafe.style.display = 'none';
+            if (openSafe) openSafe.style.display = 'flex';
+            display.value = '';
+          },
+          { once: true } // Avoid multiple triggers
+        );
       } else {
-        alert('Wrong PIN!');
+        wrongSound.play();
         display.value = '';
       }
-
     } else {
       display.value += val;
     }
   });
 });
+
 /*Sound bite for each button */
   const clickSound = new Audio('assets/music/buttonbeep.mp3');
   buttons.forEach(button => {
@@ -81,6 +101,9 @@ buttons.forEach(btn => {
   const openSafe = document.querySelector('.open');
   openSafe.addEventListener('click', () => {
     const takenSafe = document.querySelector('.taken');
+    const keysound = new Audio('assets/music/key.mp3')
+    keysound.volume = .7;
+    keysound.play();
     takenSafe.style.display = "flex";
     openSafe.style.display = 'none';
     key = true
@@ -93,15 +116,24 @@ const unpluggedTV = document.querySelector('.unplugged')
 unpluggedTV.addEventListener('click', () =>{
     const pluggedTV = document.querySelector('.plugged')
     const news = document.querySelector('.tvon')
+    const tvStatic = new Audio('assets/music/tvON.mp3');
+    tvStatic.volume = 0.7;
+    tvStatic.play();
     pluggedTV.style.display = 'flex';
     unpluggedTV.style.display = 'none';
+    tvStatic.addEventListener('ended', () => {
+
     news.style.display = 'flex';
+    });
 
 });
 
 const closedcabinet = document.querySelector('.closedcabinet')
 closedcabinet.addEventListener('click', () =>{
-    const opencabinet = document.querySelector('.opencabinet')
+    const opencabinet = document.querySelector('.opencabinet');
+    const hinge = new Audio('assets/music/cabinetdoor.mp3');
+    hinge.volume = .7;
+    hinge.play();
     closedcabinet.style.display = 'none';
     opencabinet.style.display = 'flex';
 });
@@ -113,6 +145,38 @@ door.addEventListener('click', () => {
         ending.style.display = 'flex';
     }
     else{
-        ending.style.display = 'none';
+        const lockeddoor = new Audio('assets/music/lockeddoor.mp3');
+        lockeddoor.volume = 0.25;
+        lockeddoor.play();
     }
 });
+
+
+  const sky = document.getElementById('ending');
+
+  const numStars = 150;
+
+  for (let i = 0; i < numStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    const size = Math.random() * 5 + 1; // 1px to 3px
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+
+    // Random position
+    star.style.top = `${Math.random() * window.innerHeight}px`;
+    star.style.left = `${Math.random() * window.innerWidth}px`;
+
+    sky.appendChild(star);
+
+    // Twinkling animation
+    gsap.to(star, {
+      opacity: Math.random(),
+      duration: Math.random() * 2 + 1,
+      repeat: -1,
+      yoyo: true,
+      delay: Math.random() * 1,
+      ease: "sine.inOut"
+    });
+  }
