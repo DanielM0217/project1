@@ -54,8 +54,8 @@ body {
   background: white;
   border-radius: 50%;
   opacity: 0.8;
-  pointer-events: none; /* so they don’t block clicks */
-  z-index: 0; /* make sure it's behind your end content */
+  pointer-events: none; 
+  z-index: 0; 
 }
 
 .endcontent > p{
@@ -109,7 +109,7 @@ body {
 }
 
 #closePopup {
-  background-color: #352121; /* Green */
+  background-color: #352121;
   color: white;
   padding: 10px 15px;
   border: none;
