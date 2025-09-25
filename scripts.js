@@ -41,7 +41,7 @@ buttons.forEach(btn => {
     const val = btn.textContent;
 
     if (val === 'C') {
-      display.value = '';
+      pincode.style.display = 'none';
     } else if (val === '⏎') {
       const pinEntered = display.value;
 
@@ -111,5 +111,8 @@ door.addEventListener('click', () => {
     if (key = true){
         const endscreen = document.getElementById('ending')
         ending.style.display = 'flex';
+    }
+    else{
+        ending.style.display = 'none';
     }
 });
