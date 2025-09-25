@@ -23,6 +23,18 @@
             <button id="closePopup">I understand and am ready to escape.</button>
         </div>
     </div>
+    <div id="ending" class="endscreen">
+        <div class="endcontent">
+            <h2>YOU MADE IT!</h2>
+            <p>You managed to escape the room just in time! Had you taken
+            any longer you would've died. You run back home and never look back. 
+            Congratulations!
+            </p>
+            <h2>
+                Thank you for playing!
+            </h2>
+        </div>
+    </div>
     <div id="safepassword" class="pin">
         <div class="numpad-container">
     <input type="text" id="numpad-display" placeholder="Enter Code" readonly>
@@ -51,23 +63,36 @@
             <img class="interact close" src="assets/CLOSEDSAFE.png">
         </div>
         <div class="safe">
-            <img class="interact open" src="assets/OPENSAFE.png">
+            <img class="interact open" src="assets/OPENSAFE1.png">
+        </div>
+        <div class="safe">
+            <img class="interact taken" src="assets/OPENSAFE2.png">
         </div>
         <div class="door">
             <img class="interact" src="assets/door.png">
         </div>
-        <div class="outlet">
+        <div class="outlet unplugged">
             <img class="interact" src="assets/outlet.png">
         </div>
+        <div class="outlet plugged">
+            <img class="interact" src="assets/pluggedoutlet.png">
+        </div>
         <div class="cabinet">
-            <img class="interact" src="assets/cabinet.png">
+            <img class="interact closedcabinet" src="assets/cabinet.png">
+        </div>
+        <div class="cabinet">
+            <img class="interact opencabinet" src="assets/cabinetopen.png">
         </div>
         <div class="tv">
             <img class="interact" src="assets/tv.png">
         </div>
+        <div class="tv">
+            <img class="interact tvon" src="assets/tvon.png">
+        </div>
+
 
     </div>
 <script src="scripts.js"></script> 
 </body>
 
-</html>
+</html> 
