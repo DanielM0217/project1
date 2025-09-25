@@ -33,7 +33,7 @@ body {
 }
 
 #ending{
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
   position: fixed; /* Stays in place even when scrolling */
   z-index: 1000; /* Ensures it's on top of other content */
   left: 0;
@@ -44,7 +44,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: linear-gradient(to top, rgb(26, 7, 23), rgb(78, 21, 78))
+    background: linear-gradient(45deg, #401358, #000000);
+    background-size: 300% 300%;
+	animation: gradient 4s ease infinite;  margin: auto;
 }
 
 .star {
@@ -85,7 +87,7 @@ body {
 	animation: gradient 4s ease infinite;  margin: auto;
   padding: 20px;
   border: 3px solid #5c0000;
-  width: 80%; /* Adjust as needed */
+  width: 80%;
   max-width: 500px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;

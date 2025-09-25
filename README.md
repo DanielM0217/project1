@@ -31,6 +31,10 @@ It's a simple verison of those mobile escape rooms that's done albeit rather cru
     - **Libraries**: (e.g., GSAP for animations)
     - **Other**: GitHub Pages for hosting, Figma for design
 
+    Used HTML, CSS, and Javascript
+    Briefly used GSAP
+    GitHub Pages is used to host the page and a mix of index cards and figma for design
+
 ## Credits
 
 - List any third-party assets used in the project (e.g., sound effects, images, fonts) and provide proper attribution.
