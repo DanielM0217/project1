@@ -9,12 +9,49 @@
 </head>
 
 <body>
+    <audio id="bgMusic" loop>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+    </audio>
+    <div id="myPopup" class="popup-container">
+        <div class="popup-content">
+            <h2><b>Escape the Room!</b></h2>
+            <p>You awake to find yourself in a rather empty room with limited
+            knowledge of what happened and how you got here. Click around
+            and see if there's anyway to find the <b>key</b>!
+            It's up to you to escape this room and go back home!
+            </p>
+            <button id="closePopup">I understand and am ready to escape.</button>
+        </div>
+    </div>
+    <div id="safepassword" class="pin">
+        <div class="numpad-container">
+    <input type="text" id="numpad-display" placeholder="Enter Code" readonly>
+
+    <div class="numpad-grid">
+        <button class="numpad-btn">1</button>
+        <button class="numpad-btn">2</button>
+        <button class="numpad-btn">3</button>
+        <button class="numpad-btn">4</button>
+        <button class="numpad-btn">5</button>
+        <button class="numpad-btn">6</button>
+        <button class="numpad-btn">7</button>
+        <button class="numpad-btn">8</button>
+        <button class="numpad-btn">9</button>
+        <button class="numpad-btn">C</button>
+        <button class="numpad-btn">0</button>
+        <button class="numpad-btn">⏎</button>
+    </div>
+    </div>
+    </div>    
     <div class="house">
         <div class="desk">
             <img class="interact" src="assets/desk.png">
         </div>
         <div class="safe">
-            <img class="interact" src="assets/CLOSEDSAFE.png">
+            <img class="interact close" src="assets/CLOSEDSAFE.png">
+        </div>
+        <div class="safe">
+            <img class="interact open" src="assets/OPENSAFE.png">
         </div>
         <div class="door">
             <img class="interact" src="assets/door.png">
@@ -30,6 +67,7 @@
         </div>
 
     </div>
+<script src="scripts.js"></script> 
 </body>
 
 </html>

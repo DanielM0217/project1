@@ -1,8 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 body {
     background-image: url(assets/emptyroom.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+.open{
+    display: none;
+}
+
+/*POPUP CSS TAKEN FROM CHAT GPT*/
+.popup-container {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stays in place even when scrolling */
+  z-index: 1000; /* Ensures it's on top of other content */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark, semi-transparent background */
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+    background: linear-gradient(-45deg, #eef07a, #75152d);
+    background-size: 200% 150%;
+	animation: gradient 4s ease infinite;  margin: auto;
+  padding: 20px;
+  border: 3px solid #5c0000;
+  width: 80%; /* Adjust as needed */
+  max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  top: 0%;
+  border-radius: 10px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#closePopup {
+  background-color: #352121; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+    font-style: normal;
+    font-size: 2em;
+    border-radius: .5em;
+    transition: all, .2s;
+    font-family: "Quintessential", serif;
+
+}
+
+#closePopup:hover{
+    background-color: #a34b4b;
+}
+
+.popup-content > h2{
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+}
+
+.popup-content > p{
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5em;
+}
+
+/*SAFE PASSWORD*/
+#safepassword{
+    display: none;
+    background-color: #0f0e0e;
+}
+
+.numpad-container {
+  max-width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  
+}
+
+.pin{   
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  width: 250px; /* Use fixed width instead of % for better control */
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfect centering */
+  
+  z-index: 900;
+  border-radius: 10px;
+}
+
+#numpad-display {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.numpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.numpad-btn {
+  padding: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.numpad-btn:hover {
+  background: #ddd;
 }
 
 .door{
@@ -111,7 +249,8 @@ body {
 }
     .desk > img{
         width: 27em;
-        bottom: 10%;
+        bottom: 8%;
+        left: 0%;
     }
 }
 
@@ -127,8 +266,8 @@ body {
         right: 10%;
 }    
     .desk > img{
-        width: 24em;
-        bottom: 10%;
+        width: 27em;
+        left: -8%;
     }
 }
 
@@ -145,8 +284,11 @@ body {
 }
 
     .desk > img{
-        width: 22em;
-        bottom: 13%;
+        left: -13%;
+    }
+
+    .safe > img{
+        right: 5%;
     }
 }
 
@@ -166,8 +308,16 @@ body {
         top: 40%;
         right: 25%;
     }
+    .desk > img{
+        left: -18%;
+    }
 }
 
+@media only screen and (max-width: 650px){
+    .desk > img{
+        left: -24%;
+    }
+}
 
 @media only screen and (max-width: 600px){
     .cabinet{
@@ -179,13 +329,28 @@ body {
         width: 10em;
     }
     .tv > img {
-        width: 12em;
+        width: 15em;
     }
 
     .outlet{
         position: fixed;
         top: 40%;
         right: 20%;
+    }
+    .desk > img{
+        left: -30%;
+    }
+
+    .safe > img{
+        width: 8em;
+        right: 0%;
+        bottom: 20%;
+    }
+}
+
+@media only screen and (max-width:550px){
+    .desk > img{
+        left: -35%;
     }
 }
 
@@ -199,6 +364,15 @@ body {
         bottom: 30%;
         left: 50%;   
     }
+
+    .desk > img{
+        width: 22em;
+        bottom: 13%;
+    }
+
+    .safe > img{
+        width: 6.5em;
+    }
 }
 
 @media only screen and (max-width: 410px){
@@ -206,5 +380,9 @@ body {
         position: fixed;
         top: 25%;
         left: -5%;
+    }
+    .desk > img{
+        width: 20em;
+        bottom: 13%;
     }
 }
