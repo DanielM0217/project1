@@ -108,7 +108,7 @@ closedcabinet.addEventListener('click', () =>{
 
 const door = document.querySelector('.door')
 door.addEventListener('click', () => {
-    if (key = true){
+    if (key === true){
         const endscreen = document.getElementById('ending')
         ending.style.display = 'flex';
     }
