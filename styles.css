@@ -33,9 +33,9 @@ body {
 }
 
 #ending{
-  display: flex; /* Hidden by default */
-  position: fixed; /* Stays in place even when scrolling */
-  z-index: 1000; /* Ensures it's on top of other content */
+  display: none;
+  position: fixed; 
+  z-index: 1000; 
   left: 0;
   top: 0;
   width: 100%;
