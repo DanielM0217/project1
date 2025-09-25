@@ -259,10 +259,14 @@ body {
     bottom: 5%;
     left: 15%;
 }
-@media only screen and (min-width: 1400px) and (max-width: 1500px){
+@media only screen and (max-width: 1920) and (max-height: 1080){
     .desk > img{
         width: 33em;
         left: 20%
+    }
+
+    .door {
+        top: 50%;
     }
 }
 
