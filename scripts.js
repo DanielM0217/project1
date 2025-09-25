@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+let key = false;
 /*music on load */
 
 document.addEventListener('click', function () {
@@ -77,7 +78,6 @@ buttons.forEach(btn => {
     });
   });
 
-  let key = false;
   const openSafe = document.querySelector('.open');
   openSafe.addEventListener('click', () => {
     const takenSafe = document.querySelector('.taken');
